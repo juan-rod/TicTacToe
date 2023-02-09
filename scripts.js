@@ -29,14 +29,6 @@ const handleClick = (element) => {
 
 
 
-
-
-
-
-
-
-
-
 // this function places the "currentMarker" inside the HTML element that was clicked and calls the "changeMarker" function.
 const addMarker = (id) => {
 
@@ -93,21 +85,31 @@ const resetBoard = () => {
   
   // @TODO-3: To make your "Restart" button work you'll need to build a line of code here that:
       // collects all of the "td" elements into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
+      // console.log('squares:', squares)
+      // @TODO-3.5: MIX & MATCH, You will need the following pieces of code to build that line:
+      // squares
+      // .getElementsByTagName("TD")
+      // =
+      // document
+      // const        0     1   2    3    4   5
+      // let squares = ['td','td','td','td','td','td','td','td','td',]
+      // index = index+1
+      const squares = document.getElementsByTagName("TD")
+                        
+  for (let index = 0; index < squares.length; index--) {
+    console.log('index:', index)
+    const square = squares[index];
+    square.innerHTML = null
+    console.log('square:', square)
     
-  // @TODO-3.5: MIX & MATCH, You will need the following pieces of code to build that line:
-  // squares
-  // .getElementsByTagName("TD")
-  // =
-  // document
-  // const
-  
+  }
   // loops over the HTML Collection of TDs and clears out the Xs and Os
-  for (i=0; i < squares.length; i++) {
+  // for (i=0; i < squares.length; i++) {
 
-    // will log out the id of each square as it loops over them.
-    console.log(squares[i].id)
+  //   // will log out the id of each square as it loops over them.
+  //   console.log(squares[i].id)
 
-    // sets the innerHTML to null to replace the "X" or "O"
-    squares[i].innerHTML = null
-  }  
+  //   // sets the innerHTML to null to replace the "X" or "O"
+  //   squares[i].innerHTML = null
+  // }  
 }
