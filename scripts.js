@@ -8,7 +8,11 @@
 
 // The variable will change from X to O based on what player turn it is. We need to hold this so we can place an X or O on the board when they're clicked.
 let currentMarker = 'X'
-
+let board = [
+  ['','',''],
+  ['','',''],
+  ['','',''],
+]
 
 
 
@@ -48,6 +52,10 @@ const addMarker = (id) => {
   // .getElementById(id)
   // document
   // .innerHTML 
+
+  const row = parseInt(id.charAt(0))
+  const column = parseInt(id.charAt(2))
+  board[row][column] = currentMarker
 
   changeMarker()
 }
